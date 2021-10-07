@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="inputParametrs">  <!--Блок с параметрами ввода-->
+        <div>
+            <p>Сумма кредита:</p>
+            <input type="number" class="creditSum creditParametr" value=" ">
+        </div>
+        <div>
+            <p>Срок кредита:</p>
+            <input type="number" class="creditTerm creditParametr flag" value=" ">
+            <p>Месяцев</p>
+        </div>
+        <div>
+            <p>Процентная ставка:</p>
+            <input type="number" class="creditRate creditParametr flag" value=" ">
+            <p>% годовых</p>
+        </div>
+        <div>
+            <p>Тип платежей:</p>
+            <select name="select" class="typeOfPay creditParametr flag2">
+                <option value="Аннуитентный" selected>Аннуитентный</option>
+                <option value="Дифференцированный">Дифференцированный</option>
+            </select>
+        </div>
+        <div>
+            <p>Дата первого платежа:</p>
+            <input type="date" class="firstPay creditParametr flag" value="2021-10-07">
+        </div>
+    </div>
+    <div class="payments">   <!--Блок с информацией о ежемесячных платежах и переплаченных процентах -->
+        <div>Сумма ежемесячного платежа:</div>
+        <div class="rangeValues"></div>
+        <div>Переплата по процетам за кредит:</div>
+        <div class="overpayment"></div>
+    </div>
+    <div class="wrap_table">
+        <div class="headerTable">
+            <p>График платежей</p>
+        </div>
+        <div class="header">
+            <div class="child">№ Платежа</div>
+            <div>Дата платежа</div>
+            <div>Сумма платежа</div>
+            <div>Основной долг</div>
+            <div>Начисленные проценты</div>
+            <div>Остаток задолженности</div>
+        </div>
+        <div class="mainContent">   <!--Блок для ввода вычисленных значений-->
+
+        </div>
+
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>
