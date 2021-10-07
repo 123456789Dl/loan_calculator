@@ -31,10 +31,6 @@ function annuityPayment(summ, term, rate, counter, changedSum) {           /* Ф
    let mainDebt = (payment - percents).toFixed(2)                          /* Вычисление основного долга */
    let balanceOfDebt = (+changedSum - mainDebt).toFixed(2)                 /* Вычисление остатка задолженности */
    if (balanceOfDebt < 0) balanceOfDebt = 0;
-   if (+balanceOfDebt < +mainDebt) {
-      mainDebt = +mainDebt + +balanceOfDebt
-      balanceOfDebt = 0
-   }
    outInfo2.push(counter, payment, mainDebt, percents, balanceOfDebt)      /* Возвращаемый массив [счетчик, сумма платежа, сумма основного долго, начисленные проценты, остаток задолженности] */
 
    return outInfo2
