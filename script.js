@@ -24,6 +24,7 @@ function differentiatedPayment(sum, term, rate, counter, changedSum) {     /* Ф
    return outInfo
 }
 
+
 function annuityPayment(summ, term, rate, counter, changedSum) {           /* Функция вычисленения по аннуитентному платежу */
    const outInfo2 = [];
    let payment = (+summ * ((+rate / 100 / 12) + (+rate / 100 / 12) / (((1 + (+rate / 100 / 12)) ** +term) - 1))).toFixed(2) /* Вычисление суммы платежа */
@@ -36,7 +37,7 @@ function annuityPayment(summ, term, rate, counter, changedSum) {           /* Ф
    return outInfo2
 }
    
-function differentiatedPay1() {
+function eventHandler() {
    mainCont.innerHTML = ' '
    rangeValues.innerHTML = ' '
    overpayment.innerHTML = ' '
@@ -53,8 +54,8 @@ function differentiatedPay1() {
       year: 'numeric',
       month: 'long'
    }
-
-   if (creditSum.value > 0 && creditTerm.value > 0 && creditRate.value > 0) {    /* Условие проверки на пустоту ячеек */
+  
+   if (creditSum.value > 0 && creditTerm.value > 0 && creditRate.value > 0 && firstPay.value != '') {    /* Условие проверки на пустоту ячеек */
       for (let i = 0; i < +creditTerm.value; i++) {
 
          if (typeOfPay.value == 'Аннуитентный') {                                /* Проверка вида платежа */
@@ -96,6 +97,6 @@ function differentiatedPay1() {
 }
 
 
-eventKeyup.addEventListener('keyup', differentiatedPay1)
-typeOfPay.addEventListener('input', differentiatedPay1)
-firstPay.addEventListener('input', differentiatedPay1)
+eventKeyup.addEventListener('keyup', eventHandler)
+typeOfPay.addEventListener('input', eventHandler)
+firstPay.addEventListener('input', eventHandler)
